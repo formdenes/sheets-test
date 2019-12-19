@@ -1,0 +1,25 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 20px;
+}
+
+h2{   
+    font-size: 32px;
+    text-align: center;
+    max-width: 400px;
+}
+
+p{
+    text-align: center;
+    white-space: pre;
+}
+.desc{
+    text-align: right;
+    padding-right: 50px;
+    color: darkgrey;
+    font-style: italic;
+    font-size: 14px;
+}
