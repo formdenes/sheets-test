@@ -1,22 +1,22 @@
-<div class="body">
+<!-- <div class="body">
   <ng-template ngFor let-dal [ngForOf]="dalok | keyvalue">
     <div class="item">
         {{dal["0"]}}
         {{dal}}
 
-        <!-- <app-dal></app-dal> -->
+        <app-dal></app-dal>
     </div>
   </ng-template>
-</div>
-<!-- <div class="body">
+</div> -->
+<div class="body">
     <ng-template ngFor let-dal [ngForOf]="dalok | keyvalue">
       <div class="item">
           <app-dal
-              [title]="dal.cim"
-              [text]="dal.szoveg"
-              [author]="dal.nev">
+              [title]="dal.value.cim"
+              [text]="dal.value.szoveg"
+              [author]="dal.value.nev">
           </app-dal>
       </div>
     </ng-template>
   </div>
- -->  
+  

@@ -15,8 +15,6 @@ export class NepdalokComponent implements OnInit {
       .then((resp) => resp.json())
       .then((data) => {
         this.dalok = data;
-        console.log(data);
-        console.log(data[0].nev)
       }
       )
       .catch(function(error){
