@@ -1,20 +1,25 @@
 .body{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     padding: 20px;
+    max-width: 350px;
+    margin: 20px 0;
+    border: rgba(231, 229, 229, 0.521) solid 2px;
+    border-top: rgba(231, 229, 229, 0.521) solid 1px;
+    border-bottom: rgba(0, 0, 0, 0.521) solid 1px;
+    border-radius: .25rem;
 }
 
 h2{   
     font-size: 32px;
     text-align: center;
-    max-width: 350px;
 }
 
 p{
     text-align: center;
     white-space: pre;
+    //display: none;
 }
 .desc{
     text-align: right;
@@ -22,4 +27,7 @@ p{
     color: darkgrey;
     font-style: italic;
     font-size: 14px;
+}
+.foot{
+    width: 100%;
 }

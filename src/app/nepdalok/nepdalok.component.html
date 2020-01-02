@@ -10,14 +10,12 @@
 </div> -->
 <div class="body">
     <ng-template ngFor let-dal [ngForOf]="dalok | keyvalue">
-      <div class="item">
           <app-dal
               [title]="dal.value.cim"
               [text]="dal.value.szoveg"
               [author]="dal.value.nev">
               <!-- <app-dal [dal]="dal.value"></app-dal> -->
           </app-dal>
-      </div>
     </ng-template>
   </div>
   
