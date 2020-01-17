@@ -7,15 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NepdalokComponent implements OnInit {
 
-  url = "https://sheetsu.com/apis/v1.0su/bcf3c593808f";
+  url = "https://sheets.googleapis.com/v4/spreadsheets/1Ri3Yi1oOxHSJYPamtRdUYniV_-yChKRajrB_W5C42S4/values/Sheet1?key=AIzaSyADPIOpfmlHr-_Kx14R2ZZWEDWirPBirPY";
   dalok = {};
 
   constructor() {
     fetch(this.url)
       .then((resp) => resp.json())
       .then((data) => {
-        this.dalok = data;
-        data.sort((x,y) =>{
+        let originalData = data.values
+        let formattedData = [];
+        originalData.forEach((row, i) => {
+          if (i > 0){
+            let rowObj = {};
+            row.forEach((cell, j) => {
+              rowObj[originalData[0][j]] = cell;
+            });
+            formattedData.push(rowObj);
+          }
+        })
+        console.log(formattedData);
+        this.dalok = formattedData;
+        formattedData.sort((x,y) =>{
           if (x.cim < y.cim) return -1;
           else return 1;        
         })
