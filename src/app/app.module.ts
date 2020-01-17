@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NepdalokComponent } from './nepdalok/nepdalok.component';
 import { JatekokComponent } from './jatekok/jatekok.component';
 import { DalComponent } from './dal/dal.component';
+import { NepdalokYearComponent } from './nepdalok-year/nepdalok-year.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DalComponent } from './dal/dal.component';
     HomeComponent,
     NepdalokComponent,
     JatekokComponent,
-    DalComponent
+    DalComponent,
+    NepdalokYearComponent
   ],
   imports: [
     BrowserModule,

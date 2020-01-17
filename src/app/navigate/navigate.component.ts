@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navigate',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigate.component.scss']
 })
 export class NavigateComponent implements OnInit {
+
+  @Input() title;
+  @Input() year;
 
   constructor() { }
 

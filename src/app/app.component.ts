@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sheet-test';
+  title:string;
+  year;
+  
+  onActivate(componentRef){
+    this.year = componentRef.works().year === "all" ? "" : componentRef.works().year;
+    this.title = componentRef.works().title;
+  }
 }
