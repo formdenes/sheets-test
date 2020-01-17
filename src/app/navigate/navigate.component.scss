@@ -1,17 +1,17 @@
 .body{
     display: flex;
-    background-color: black;
-    color: white;
-    padding: 15px;
+    background-color: #05386b;
+    color: #edf5e1;
+    padding: 1em;
     justify-content: flex-end;
 }
 nav{
-    margin: 0 5px;
+    margin: 0 0.3em;
 }
 a{
     text-decoration: none;
     font-weight: 500;
 }
 a:visited{
-    color:white;
+    color:#edf5e1;
 }

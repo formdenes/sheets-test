@@ -15,7 +15,10 @@ export class NepdalokComponent implements OnInit {
       .then((resp) => resp.json())
       .then((data) => {
         this.dalok = data;
-        console.log(data[0])
+        data.sort((x,y) =>{
+          if (x.cim < y.cim) return -1;
+          else return 1;        
+        })
       }
       )
       .catch(function(error){
