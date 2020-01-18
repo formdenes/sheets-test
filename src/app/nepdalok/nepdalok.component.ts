@@ -22,7 +22,7 @@ export class NepdalokComponent implements OnInit {
     this.titleEvent.emit(this.year);
     if (this.year !== "all"){
       getSheetData(getValuesUrl(this.year))
-      .then(data => this.dalok = data)
+      .then((data: any[]) => this.dalok = data)
     }
     else{
     fetch(this.sheetsUrl)
@@ -37,7 +37,7 @@ export class NepdalokComponent implements OnInit {
         // return getSheetData(getValuesUrl(sheets[0]));
       })
       .then(allData => {
-        allData.forEach(data => {
+        allData.forEach((data: any[]) => {
           data.forEach(v => {
             this.dalok.push(v)
           })
