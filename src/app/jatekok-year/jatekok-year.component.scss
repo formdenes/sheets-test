@@ -1,0 +1,21 @@
+.body {
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+h2 {
+    color: #05386b;
+    margin: .2em 0;
+}
+
+a{
+    text-decoration: none;
+    font-weight: 800;
+    color:#05386b;
+}
+a:visited{
+    color:#05386b;
+}

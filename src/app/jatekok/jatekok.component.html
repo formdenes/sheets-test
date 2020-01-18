@@ -1,1 +1,10 @@
-<p>jatekok works!</p>
+<div class="body">
+    <ng-template ngFor let-jatek [ngForOf]="jatekok | keyvalue">
+          <app-jatek
+              [title]="jatek.value.cim"
+              [text]="jatek.value.leiras"
+              [author]="jatek.value.nev"
+              [link]="jatek.value.link">
+          </app-jatek>
+    </ng-template>
+  </div>

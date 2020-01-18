@@ -9,6 +9,8 @@ import { NepdalokComponent } from './nepdalok/nepdalok.component';
 import { JatekokComponent } from './jatekok/jatekok.component';
 import { DalComponent } from './dal/dal.component';
 import { NepdalokYearComponent } from './nepdalok-year/nepdalok-year.component';
+import { JatekokYearComponent } from './jatekok-year/jatekok-year.component';
+import { JatekComponent } from './jatek/jatek.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NepdalokYearComponent } from './nepdalok-year/nepdalok-year.component';
     NepdalokComponent,
     JatekokComponent,
     DalComponent,
-    NepdalokYearComponent
+    NepdalokYearComponent,
+    JatekokYearComponent,
+    JatekComponent
   ],
   imports: [
     BrowserModule,
