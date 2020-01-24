@@ -42,12 +42,12 @@ export class NepdalokComponent implements OnInit {
             this.dalok.push(v)
           })
         })
-        console.log(this.dalok);
+        // console.log(this.dalok);
         this.dalok.sort((x,y) =>{
           if (x.cim < y.cim) return -1;
           else return 1;        
         })
-        setTimeout(()=>console.log("2",this.dalok),3000)
+        // setTimeout(()=>console.log("2",this.dalok),3000)
         
       })
       .catch(err => console.error(err))

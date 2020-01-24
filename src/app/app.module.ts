@@ -11,6 +11,7 @@ import { DalComponent } from './dal/dal.component';
 import { NepdalokYearComponent } from './nepdalok-year/nepdalok-year.component';
 import { JatekokYearComponent } from './jatekok-year/jatekok-year.component';
 import { JatekComponent } from './jatek/jatek.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { JatekComponent } from './jatek/jatek.component';
     DalComponent,
     NepdalokYearComponent,
     JatekokYearComponent,
-    JatekComponent
+    JatekComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,

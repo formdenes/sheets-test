@@ -5,6 +5,8 @@
     padding: 1em;
     justify-content: space-between;
     align-items: center;
+    // background-color: lightseagreen;
+    height: 10vh;
 }
 
 .imgcontainer{
@@ -15,10 +17,12 @@
     display: flex;
     justify-content: flex-end;
     flex-basis: 45em;
+    align-items: center;
+    height: 100%;
 }
 
 img{
-    height: 6em;
+    height: 10vh;
 }
 nav{
     margin: 0 0.3em;

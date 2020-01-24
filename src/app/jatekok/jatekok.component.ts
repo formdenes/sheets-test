@@ -42,12 +42,12 @@ export class JatekokComponent implements OnInit {
             this.jatekok.push(v)
           })
         })
-        console.log(this.jatekok);
+        // console.log(this.jatekok);
         this.jatekok.sort((x,y) =>{
           if (x.cim < y.cim) return -1;
           else return 1;        
         })
-        setTimeout(()=>console.log("2",this.jatekok),3000)
+        // setTimeout(()=>console.log("2",this.jatekok),3000)
         
       })
       .catch(err => console.error(err))

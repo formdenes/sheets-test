@@ -1,10 +1,15 @@
 <div class="body">
     <div class="imgcontainer">
-        <a href="/"><img src="../../assets/falkalogo.png"></a>
+        <a routerLink="/"><img src="../../assets/falkalogo.png"></a>
     </div>
     <p>{{title}}<br>{{year}}</p>
     <div class="links">
-        <nav><a href="/nepdalok">Népdalok</a></nav>
-        <nav><a href="jatekok">Játékok</a></nav>
+        <nav (mouseover)="onMouseOver($event.target.className)" (mouseout)="onMouseOut($event.target.className)">
+            <a routerLink="/nepdalok" class="dalokNav">Népdalok</a>
+            <app-dropdown [years]="years.dalok"></app-dropdown>
+            <!-- <app-dropdown *ngIf="expand.dalokNav" [years]="years.dalok"></app-dropdown> -->
+        </nav>
+        <!-- <nav><a href="jatekok"  (click)="onNavigate($event)">Játékok</a></nav> -->
+        <nav><a routerLink="/jatekok">Játékok</a></nav>
     </div>
 </div>
