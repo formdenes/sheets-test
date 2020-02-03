@@ -1,46 +1,31 @@
-import { Component } from '@angular/core';
-import { GlobalService } from './global.service';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
-  title:string;
-  year;
-  years: {dalok:string[], jatekok: string[]};
-  dalokURL: string = "https://sheets.googleapis.com/v4/spreadsheets/1Ri3Yi1oOxHSJYPamtRdUYniV_-yChKRajrB_W5C42S4?key=AIzaSyADPIOpfmlHr-_Kx14R2ZZWEDWirPBirPY";
-  jatekokURL: string = "https://sheets.googleapis.com/v4/spreadsheets/1ANA_-nr6RhTu7Opt_bFXZlafSkI-mtpoH_xnllvUIqg?key=AIzaSyADPIOpfmlHr-_Kx14R2ZZWEDWirPBirPY";
-  data;
-  constructor (private globalService: GlobalService) {
-    // this.years = {
-    //   dalok: [],
-    //   jatekok: []
-    // }
-    // getYears()
-    // .then((years: {dalok:string[], jatekok: string[]}) => {
-    //   this.years = years;
-    //   globalService.setYears(years);
-    //   return getData(years);      
-    // })
-    // .then(data => {
-    //   this.data = data;
-    //   globalService.setData(data);
-    // })
-  }
+export class GlobalService {
 
-  ngOnInit() {
-  }
+  private yearsSource = new Subject();
+  private dataSource = new Subject();
 
-  
-  onActivate(componentRef){
-    if(componentRef.works){
-      this.title = componentRef.works().title;	      this.year = componentRef.works().year === "all" ? "" : componentRef.works().year;
-        this.title = componentRef.works().title;
-      }
-  }
+  years$ = this.yearsSource.asObservable();
+  data$ = this.dataSource.asObservable();
+
+  constructor() {
+    getYears()
+    .then((years: {dalok:string[], jatekok: string[]}) => {
+      this.yearsSource.next(years);
+      sessionStorage.setItem("years",JSON.stringify(years));
+      return getData(years);      
+    })
+    .then(data => {
+      this.dataSource.next(data);
+      sessionStorage.setItem("data", JSON.stringify(data));
+    })
+   }
 }
+
 
 const getURL = (sheet: string, value?: string, type: string = ""): string => {
   let sheetValue:string = "";
