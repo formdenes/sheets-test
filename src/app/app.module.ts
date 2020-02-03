@@ -11,6 +11,7 @@ import { DalComponent } from './dal/dal.component';
 import { NepdalokYearComponent } from './nepdalok-year/nepdalok-year.component';
 import { JatekokYearComponent } from './jatekok-year/jatekok-year.component';
 import { JatekComponent } from './jatek/jatek.component';
+import { GlobalService } from './global.service';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
@@ -30,7 +31,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GlobalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

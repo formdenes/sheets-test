@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-nepdalok-year',
@@ -7,16 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NepdalokYearComponent implements OnInit {
 
-  sheetsUrl = "https://sheets.googleapis.com/v4/spreadsheets/1Ri3Yi1oOxHSJYPamtRdUYniV_-yChKRajrB_W5C42S4?key=AIzaSyADPIOpfmlHr-_Kx14R2ZZWEDWirPBirPY";
   years = [];
 
-  constructor() { 
-    fetch(this.sheetsUrl)
-      .then(resp => resp.json())
-      .then(mysheat => this.years = mysheat.sheets.map(sheet => sheet.properties.title))
+  constructor(private globalService: GlobalService) {
   }
 
   ngOnInit() {
+    //this.globalService.years$.subscribe(years => this.years = years.dalok.sort((a, b) => a - b));
+    let years = JSON.parse(sessionStorage.getItem("years")).dalok;
+    this.years = years;
   }
   works(){
     return {
